@@ -139,7 +139,7 @@ I used sliding window approach or targeted search to identify pixels that belong
 
 ##### Sliding window approach
 
-This was performed as blind search when previous line positions could not be used for calculation. Line base coordinates were calculated using histogram, adding up the pixel values along each column in the image. Median was either at half width or at the center previous left/right bases. Histogram peaks are selected as left/right bases, but only within a clipping distance of 150 pixels from median. In the histogram below for example the adjacent lane line has higher value, but it is over the clipping distance, so the smaller closer value will be selected as right base. From the base points I use a sliding window, placed around the line centers, to find and follow the lines up to the top of the frame. I used 12 windows with margin of 35 pixels. I set limits that subsequent windows must not change rapidly, more than 50 pixels sideways.
+This was performed as blind search when previous line positions could not be used for calculation. Line base coordinates were calculated using histogram, adding up the pixel values along each column in the image. Median was either at half width or at the center of previous left/right bases. Histogram peaks are selected as left/right bases, but only within a clipping distance of 150 pixels from median. In the histogram above for example the adjacent lane line has higher value, but it is over the clipping distance, so the smaller closer value will be selected as right base. From the base points I use a sliding window, placed around the line centers, to find and follow the lines up to the top of the frame. I used 12 windows with margin of 35 pixels. I set limits that subsequent windows must not change rapidly, more than 50 pixels sideways.
 
 ![alt text][image9]
 
@@ -215,7 +215,7 @@ Here's a [link to my video result](./project_video_output.mp4).
 
 ##### General issues
 
-If I were to make my pipeline more robust I would tune thresholding a bit to get more pixels of lane lines even if it means more 'noise'. With more advanced sanity checks it seems better to detect more than have nothing distant lines. I'd like to build more on previous line information and leave mimic points out of the game.
+If I were to make my pipeline more robust I would tune thresholding a bit to get more pixels of lane lines even if it means more 'noise'. With more advanced sanity checks it seems better to detect more than have nothing from distant lines. I'd like to build more on previous line information and leave mimic points out of the game.
 
 ##### Challenge #1
 
